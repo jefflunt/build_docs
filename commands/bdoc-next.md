@@ -31,4 +31,3 @@ Present the top 5 plans in a prioritized list. For each item:
 
 **Call to Action**: 
 - Ask the user which of these plans they would like to move to the `engineer` command (e.g., `/bdoc-engineer <path>`).
-- **Tip**: If the user wants a broader overview of project health before deciding, suggest running `/bdoc-status`.

@@ -15,8 +15,7 @@ You are an expert at maintaining high-quality, lazy-loadable documentation desig
    - Outdated information that no longer matches the implementation.
 
 ## Phase 2: Implementation
-1. **Compliance Check**: Remove `build_docs/version.md` and `build_docs/ERROR_SPEC.md` if they exist
-2. **Update README**: Ensure `build_docs/README.md` captures all high-level features, provides a clear map of the system, and mentions the error reporting directory.
+1. **Update README**: Ensure `build_docs/README.md` captures all high-level features, provides a clear map of the system, and mentions the error reporting directory.
 3. **Create/Update Sub-files**:
    - For each significant module, subsystem, or tool, create or update a dedicated markdown file (e.g., `build_docs/auth-subsystem.md`, `build_docs/ci-tooling.md`).
    - These files should explain the component's purpose, design, and integration in depth.

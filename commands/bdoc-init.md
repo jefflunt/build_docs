@@ -19,13 +19,12 @@ If initialization is required:
    - `build_docs/`
    - `build_docs/plans/`
    - `build_docs/errors/`
-2. **Cleanup Version**: Delete `build_docs/version.md` if it exists
-3. **Deep Scan**:
-   - **Purpose & Features**: Scan the codebase to identify the project's purpose and existing features.
-   - **Roadmap**: Scan for any existing plan files (in the root or `build_docs/plans/`) to determine the pending roadmap.
-   - **Verification**: Scan automated tests to confirm your understanding of the project's logic and behavior.
-   - **Structure**: Analyze code layout, folder organization, and established design patterns.
-   - **Tech Stack**: Identify the languages, frameworks, linters, and test runners being used.
+2. **Deep Scan**:
+    - **Purpose & Features**: Scan the codebase to identify the project's purpose and existing features.
+    - **Roadmap**: Scan for any existing plan files (in the root or `build_docs/plans/`) to determine the pending roadmap.
+    - **Verification**: Scan automated tests to confirm your understanding of the project's logic and behavior.
+    - **Structure**: Analyze code layout, folder organization, and established design patterns.
+    - **Tech Stack**: Identify the languages, frameworks, linters, and test runners being used.
 
 ## Phase 3: Generate Agent README
 Write `build_docs/README.md` with the following sections:
@@ -34,7 +33,7 @@ Write `build_docs/README.md` with the following sections:
 3. **Roadmap**: A summary of as-yet-not-implemented features or fixes found in existing plans.
 4. **Architecture & Design**: Code layout, structure, and key design patterns to follow.
 5. **Tooling**: Tech stack, linters, and how to run tests.
-6. **Error Reporting**: Briefly mention that errors are tracked in `build_docs/errors/` following the `ERROR_SPEC.md`.
+6. **Error Reporting**: Briefly mention that errors are tracked in `build_docs/errors/`.
 
 **Standard Compliance**: Ensure the project follows Build Docs guidelines.
 

@@ -1,88 +1,55 @@
 # Build Docs (bdoc) Standard Library
 
-This repository contains a set of OpenCode commands and agents designed to create a standardized, machine-readable interface between your codebase and AI agents.
+Build Docs (bdoc) is a set of AI-native commands and agents designed to create a standardized, machine-readable interface between your codebase and AI agents. It ensures that documentation, plans, and technical context are easily discoverable and actionable.
 
-## Core Concepts
+## Core Philosophy: The `build_docs/` Directory
+The `bdoc` standard dictates that all project-level documentation and implementation plans reside in a `build_docs/` directory at the project root. This keeps your root clean while providing a "Source of Truth" for AI agents.
 
-### 1. The `build_docs/` Directory
-The `bdoc` standard dictates that all project-level documentation, implementation plans, and error logs should reside in a `build_docs/` directory at the project root. This keeps the root clean and provides a "Source of Truth" for AI agents.
+### Key Components
+- **`README.md`**: High-level overview of the project, architecture, and tech stack.
+- **`plans/`**: A directory containing detailed implementation plans for features and bug fixes.
 
-### 2. Standardized Error Reporting
-Unlike traditional human-readable logs, `bdoc` requires **JSON Lines (.jsonl)** error logs placed in `build_docs/errors/`. This allows AI agents to parse, group, and diagnose errors without guessing.
+---
 
-**Required Schema:**
-```json
-{
-  "timestamp": "ISO-8601",
-  "level": "ERROR|CRITICAL",
-  "error_id": "unique-fingerprint",
-  "session_id": "UUID-for-execution-session",
-  "message": "Summary of the error",
-  "stack_trace": "Full raw trace",
-  "context": { "component": "name", "metadata": {} }
-}
-```
+## Getting Started
+If you are new to `bdoc`, the best way to start is by initializing your project.
 
-## Tooling Ecosystem
+1.  **Initialize**: Run `/bdoc-init`. This scans your codebase and creates the `build_docs/` directory with a project README.
+2.  **Plan**: Use `/bdoc-feature` (for new features) or `/bdoc-bug` (for bug fixes). These agents will research the codebase and create a detailed implementation plan.
+3.  **Implement**: Once a plan is created, run `/bdoc-engineer <path-to-plan>` to execute the steps and verify the changes.
+4.  **Sync**: Run `/bdoc-update` after making changes to ensure the AI-facing documentation stays up-to-date.
 
-This package provides a unified ecosystem of **Commands** and **Agents** that work together to automate the software development lifecycle.
+---
 
-### Specialized Agents
+## Available Commands
 
-| Agent | Role | Core Responsibility |
-|-------|------|----------------------|
-| `bdoc_bug` | Researcher | Analyzes bugs, identifies root causes, and creates implementation plans. |
-| `bdoc_feature` | Architect | Scans the codebase to design and plan new features. |
-| `bdoc_engineer` | Builder | Executes implementation plans, writes code, and runs tests. |
-| `bdoc_triage` | Diagnostician | Maps raw error logs back to the source code to find where things broke. |
-| `bdoc_idea` | Sounding Board | Helps brainstorm and refine high-level concepts before they become plans. |
+| Command | Description |
+| :--- | :--- |
+| `/bdoc-init` | Initializes the `build_docs/` structure and scans the codebase. |
+| `/bdoc-update` | Syncs documentation with the current state of the code. |
+| `/bdoc-feature` | Research and plan a new feature (creates a plan file). |
+| `/bdoc-bug` | Research and plan a bug fix (creates a plan file). |
+| `/bdoc-engineer` | Executes an implementation plan and verifies changes. |
+| `/bdoc-next` | Scans pending plans and recommends what to work on next. |
+| `/bdoc-read` | Provides a high-level overview of the project from `build_docs/README.md`. |
 
-### Command Suite
+---
 
-#### Project Management & Documentation
-| Command | Agent | Description |
-|---------|-------|-------------|
-| `/bdoc-init` | `build` | Initializes the `build_docs` structure and versioning. |
-| `/bdoc-update` | `build` | Syncs docs with code and ensures `bdoc` compliance. |
-| `/bdoc-version` | `build` | Displays the current `bdoc` version. |
-| `/bdoc-status` | `plan` | Provides a high-level overview of project health and active plans. |
-| `/bdoc-plans` | `plan` | List all implementation plans and their current status. |
+## Specialized Agents
 
-#### Development Workflow
-| Command | Agent | Description |
-|---------|-------|-------------|
-| `/bdoc-feature` | `bdoc_feature` | Research and plan a new feature. |
-| `/bdoc-bug` | `bdoc_bug` | Research and plan a bug fix. |
-| `/bdoc-engineer` | `bdoc_engineer` | Implement an existing plan file. |
-| `/bdoc-verify` | `build` | Execute testing and verification steps from a plan. |
-| `/bdoc-next` | `plan` | Analyzes pending plans and recommends what to build next. |
-| `/bdoc-auto` | `general` | Automatically prioritizes and executes pending plans. |
+- **`bdoc_feature`**: **The Architect.** Deep-dives into context and produces "spoon-fed" implementation plans.
+- **`bdoc_bug`**: **The Investigator.** Reproduces issues and specifies exact technical fixes.
+- **`bdoc_engineer`**: **The Builder.** Follows plans, writes code, and runs tests to ensure everything works.
+- **`bdoc_idea`**: **The Partner.** A professional sounding board for brainstorming and refining concepts.
 
-#### Error Monitoring & Analysis
-| Command | Agent | Description |
-|---------|-------|-------------|
-| `/bdoc-log-report` | `bdoc_triage` | Aggregates and summarizes error logs in `build_docs/errors/`. |
-| `/bdoc-triage <id>` | `bdoc_triage` | Maps a log to code and suggests a `/bdoc-bug` command. |
-| `/bdoc-audit-logs` | `build` | Searches for legacy logs and captured output for debugging. |
+---
 
-#### Maintenance
-| Command | Agent | Description |
-|---------|-------|-------------|
-| `/bdoc-pkg-update` | `build` | Updates these tools from the upstream Standard Library repo. |
+## Installation
 
-## Distribution & Installation
+To use these tools in your project, add this repository as a submodule:
 
-### Option A: Git Submodule (Recommended)
-To use these tools in a new project and keep them updated:
 ```bash
-git submodule add <this-repo-url> .opencode
+git submodule add <repo-url> .opencode
 ```
 
-### Option B: Direct Clone
-```bash
-git clone <this-repo-url> .opencode
-```
-
-## Versioning
-The standard follows semantic versioning.
-The version is tracked in each project via `build_docs/version.md`.
+Alternatively, you can clone the repository directly. Most AI agents will automatically discover the commands and agents within the directory.
