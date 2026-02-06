@@ -32,6 +32,7 @@ If you are new to `bdoc`, the best way to start is by initializing your project.
 | `/bdoc-engineer` | Executes an implementation plan and verifies changes. |
 | `/bdoc-next` | Scans pending plans and recommends what to work on next. |
 | `/bdoc-quick` | Rapidly implements small code changes based on feedback. |
+| `/bdoc-trace` | Traces data flow and provides debug info for a bug report. |
 | `/bdoc-read` | Provides a high-level overview of the project from `build_docs/README.md`. |
 
 ---
@@ -42,6 +43,7 @@ If you are new to `bdoc`, the best way to start is by initializing your project.
 - **`bdoc_bug`**: **The Investigator.** Reproduces issues and specifies exact technical fixes.
 - **`bdoc_engineer`**: **The Builder.** Follows plans, writes code, and runs tests to ensure everything works.
 - **`bdoc_quick`**: **The Sprinter.** Quickly implements small, focused changes from feedback.
+- **`bdoc_trace`**: **The Detective.** Traces data flow and provides deep technical context for bugs.
 - **`bdoc_idea`**: **The Partner.** A professional sounding board for brainstorming and refining concepts.
 
 ---
