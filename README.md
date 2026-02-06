@@ -1,8 +1,8 @@
-# Build Docs (bdoc) Standard Library
+# build_docs (or bdoc) a self-documenting tool for continuous improvement of a codebase
 
 Build Docs (bdoc) is a set of AI-native commands and agents designed to create a standardized, machine-readable interface between your codebase and AI agents. It ensures that documentation, plans, and technical context are easily discoverable and actionable.
 
-## Core Philosophy: The `build_docs/` Directory
+## Approach: The `build_docs/` Directory
 The `bdoc` standard dictates that all project-level documentation and implementation plans reside in a `build_docs/` directory at the project root. This keeps your root clean while providing a "Source of Truth" for AI agents.
 
 ### Key Components
@@ -23,17 +23,17 @@ If you are new to `bdoc`, the best way to start is by initializing your project.
 
 ## Available Commands
 
-| Command | Description |
-| :--- | :--- |
-| `/bdoc-init` | Initializes the `build_docs/` structure and scans the codebase. |
-| `/bdoc-update` | Syncs documentation with the current state of the code. |
-| `/bdoc-feature` | Research and plan a new feature (creates a plan file). |
-| `/bdoc-bug` | Research and plan a bug fix (creates a plan file). |
-| `/bdoc-engineer` | Executes an implementation plan and verifies changes. |
-| `/bdoc-next` | Scans pending plans and recommends what to work on next. |
-| `/bdoc-quick` | Rapidly implements small code changes based on feedback. |
-| `/bdoc-trace` | Traces data flow and provides debug info for a bug report. |
-| `/bdoc-read` | Provides a high-level overview of the project from `build_docs/README.md`. |
+| Command | Category | Description |
+| :--- | :--- | :--- |
+| `/bdoc-init` | `docs` | Initializes the `build_docs/` structure and scans the codebase. |
+| `/bdoc-read` | `docs` | Provides a high-level overview of the project from `build_docs/README.md`. |
+| `/bdoc-update` | `docs` | Syncs documentation with the current state of the code. |
+| `/bdoc-bug` | `plan` | Research and plan a bug fix (creates a plan file). |
+| `/bdoc-feature` | `plan` | Research and plan a new feature (creates a plan file). |
+| `/bdoc-trace` | `plan` | Traces data flow and provides debug info for a bug report. |
+| `/bdoc-engineer` | `build` | Executes an implementation plan and verifies changes. |
+| `/bdoc-quick` | `build` | Rapidly implements small code changes based on feedback. |
+| `/bdoc-next` | `prioritize` | Scans pending plans and recommends what to work on next. |
 
 ---
 
