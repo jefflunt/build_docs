@@ -31,8 +31,10 @@ If you are new to `bdoc`, the best way to start is by initializing your project.
 | `/bdoc-bug` | `plan` | Research and plan a bug fix (creates a plan file). |
 | `/bdoc-feature` | `plan` | Research and plan a new feature (creates a plan file). |
 | `/bdoc-trace` | `plan` | Traces data flow and provides debug info for a bug report. |
+| `/bdoc-merge` | `build` | Automatically merge a topic branch into a destination branch, resolving conflicts if necessary. |
 | `/bdoc-engineer` | `build` | Executes an implementation plan and verifies changes. |
 | `/bdoc-quick` | `build` | Rapidly implements small code changes based on feedback. |
+| `/bdoc-idea` | `brainstorm` | Brainstorm new projects, features, or concepts. |
 | `/bdoc-next` | `prioritize` | Scans pending plans and recommends what to work on next. |
 
 ---
@@ -44,6 +46,7 @@ If you are new to `bdoc`, the best way to start is by initializing your project.
 - **`bdoc_engineer`**: **The Builder.** Follows plans, writes code, and runs tests to ensure everything works.
 - **`bdoc_quick`**: **The Sprinter.** Quickly implements small, focused changes from feedback.
 - **`bdoc_trace`**: **The Detective.** Traces data flow and provides deep technical context for bugs.
+- **`bdoc_merge`**: **The Mediator.** Handles complex merges and automatically resolves conflicts.
 - **`bdoc_idea`**: **The Partner.** A professional sounding board for brainstorming and refining concepts.
 
 ---
