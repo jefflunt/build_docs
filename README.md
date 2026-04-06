@@ -1,4 +1,4 @@
-# agent_docs Framework
+# agent_docs framework
 
 This repository provides a standardized, AI-readable framework for documenting software projects. By adopting this structure, you enable AI agents to quickly understand, navigate, and contribute to your repository using [**Continuous Alignment**](https://contalign.jefflunt.com/) and [**Progressive Disclosure**](https://docs.claude-mem.ai/progressive-disclosure).
 
@@ -25,9 +25,9 @@ AI agents should start at `01_orientation/README.md` to establish the alignment 
 To use this framework to initialize a new project, provide your AI agent with this prompt:
 
 ```plaintext
-I want to build a new project that <project goals description, which can be a 
-few lines of text, or mutiple paragraphs>. Please start implementation using the 
-patterns laid out in https://github.com/jefflunt/agent_docs and then let's plan 
+I want to build a new project that <project goals description, which can be a
+few lines of text, or mutiple paragraphs>. Please start implementation using the
+patterns laid out in https://github.com/jefflunt/agent_docs and then let's plan
 a series of features together.
 ```
 
