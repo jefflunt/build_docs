@@ -37,5 +37,16 @@ When initialized this way, an AI agent should:
 3. Fill in `02_patterns/` as the foundational standards for the project evolve.
 4. Begin the [Continuous Alignment](https://contalign.jefflunt.com/) loop by proposing the first epic plan in `04_plans/`.
 
+### As a Way to Backfill Documentation
+For complex or legacy codebases, use `03_deep_dives/` to incrementally document the system as you explore it.
+
+When working on an existing project, instruct your agent:
+
+```plaintext
+Create deep-dive documentation of <feature/bug/subsystem> in
+`agent_docs/03_deep_dives/*.md` following `templates/deep_dive_template.md` as
+a template.
+```
+
 ## Examples
 - [planner](https://github.com/jefflunt/planner): A real-world example of applying this framework to organize architectural decisions, feature planning, and pattern documentation for a focused utility project.
